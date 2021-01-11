@@ -3,10 +3,16 @@ import { connect } from 'react-redux';
 import { getSmurf } from '../actions'
 
 export class SmurfDisplay extends React.Component {
-    useEffect(
-        ({name, loading}) => {
-            getSmurf();
-        }, [getSmurf];
+    constructor() {
+        super();
+        this.state = {
+            smurfs: []
+        }
+    }
+
+    componentDidMount() {
+        
+    }
     
     render() {
         return (<div>

@@ -1,8 +1,8 @@
 
 export const initialState = [{
-    name: '',
-    age: '',
-    height: '',
+    name: 'Brainy',
+    age: 200,
+    height: '5cm',
     id: Date.now(),
     loading: false,
     error: ''
