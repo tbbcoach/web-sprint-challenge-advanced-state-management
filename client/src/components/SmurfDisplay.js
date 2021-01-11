@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { getSmurf } from '../actions'
 
 export class SmurfDisplay extends React.Component {
+    useEffect(
+        ({name, loading}) => {
+            getSmurf();
+        }, [getSmurf];
+    
     render() {
-        return(<div>
+        return (<div>
             
         </div>)
     }
