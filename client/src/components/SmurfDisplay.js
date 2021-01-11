@@ -11,7 +11,7 @@ export class SmurfDisplay extends React.Component {
     }
 
     componentDidMount() {
-        
+
     }
     
     render() {
@@ -21,7 +21,13 @@ export class SmurfDisplay extends React.Component {
     }
 }
 
-export default SmurfDisplay;
+const mapStateToProps = (state) => {
+    return { loading: state.loading };
+};
+
+const mapDispatchToProps = {getSmurf}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SmurfDisplay);
 
 //Task List:
 //1. Import in all needed components and library methods.
