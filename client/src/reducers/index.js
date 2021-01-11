@@ -1,9 +1,44 @@
 
-export const initialState = {
-}
+export const initialState = [{
+    name: '',
+    age: '',
+    height: '',
+    id: Date.now(),
+    loading: false,
+    error: ''
+}]
 
-const reducer = ()=>{
-}
+const reducer = (state = initialState, action) => {
+    switch (action.type) {
+        case "LOADING_SMURF":
+            console.log('loading smurf data');
+            return {
+                ...state,
+                loading: true
+            };
+        case "LOADING_SMURF_SUCCESS":
+            return {
+                ...state,
+                name: action.payload,
+                loading: false
+            };
+        case "ADDING_SMURF":
+            return {
+                ...state,
+                name: action.payload,
+                age: action.payload,
+                height: action.payload
+            };
+        case "ERROR_LOADING_SMURF":
+            return {
+                ...state,
+                error: action.payload,
+                loaing: false,
+            };
+        default:
+            return state;
+    }
+};
 
 export default reducer;
 
